@@ -19,7 +19,10 @@ def main():
         r = a + b
         print("%d: que vaut %d + %d ?"%(i, a, b))
         user_result_string = input()
-        user_number = int(user_result_string)
+        try:
+            user_number = int(user_result_string)
+        except ValueError:
+            user_number = -1
         if user_number == r:
             correctResults += 1
             print("correct. score :  %d/%d"%(correctResults,i))
@@ -37,4 +40,5 @@ def main():
     else:
         commentaire = "retourne à la maternelle"
     print("ton score est de %d%%. %s."%(pct_correct, commentaire))
+    input()
 main()
